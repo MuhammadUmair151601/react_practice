@@ -2,10 +2,8 @@ import React from 'react'
 
 const App = () => {
   return (
-    <div>
-      <h1>This is a sample</h1>
-    </div>
+    <div className='bg-blue-400'>Muhammad umair</div>
   )
 }
 
-export default App;
+export default App
