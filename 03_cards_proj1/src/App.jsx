@@ -1,8 +1,15 @@
 import React from 'react'
-
+import Card from './Card'
 const App = () => {
   return (
-    <div className='bg-red-400'>App</div>
+    <div className='flex flex-wrap'>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </div>
   )
 }
 
