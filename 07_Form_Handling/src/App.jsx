@@ -5,8 +5,7 @@ const App = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("form submitted:", value);
-
+    console.log(value);
     setValue("");
   };
 
