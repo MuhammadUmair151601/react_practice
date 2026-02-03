@@ -31,13 +31,11 @@ const App = () => {
             Add Notes
           </button>
         </form>
-        <div className="mt-5 lg:w-1/2 p-10 flex flex-col">
-          <h1 className="text-3xl font-bold text-white">My Notes</h1>
-          <div className="flex mt-5 gap-5 flex-wrap h-full overflow-y-auto">
-            <div className="h-50 w-50 p-5 bg-white mt-10 rounded-[5px]"></div>
-            <div className="h-50 w-50 p-5 bg-white mt-10 rounded-[5px]"></div>
-            <div className="h-50 w-50 p-5 bg-white mt-10 rounded-[5px]"></div>
-            
+        <div className="lg:w-1/2 p-10 flex flex-col">
+          <h1 className="text-3xl font-bold text-white ml-10">My Notes</h1>
+            <div className="flex  mt-5 gap-5 flex-wrap h-full lg:border-l-2 lg:border-white overflow-y-auto">
+            <div className="h-50 w-50 p-5 bg-white mt-10 rounded-[5px] ml-10"></div>
+            <div className="h-50 w-50 p-5 bg-white mt-10 rounded-[5px] ml-10"></div>
           </div>
         </div>
       </div>
