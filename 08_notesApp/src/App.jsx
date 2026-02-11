@@ -2,13 +2,26 @@ import React, { useState } from "react";
 
 const App = () => {
   const submithandler = (e) => {
+
+    const copytask = [...Task]
+    // saare task ko copy kiya taking from task.
+    copytask.push({title,Detail})
+    // phir sare task ko push kiya copytask ma
+    // console.log(copytask)
+    setTask(copytask)
+    console.log(copytask)
+    // copy task ko console ma print kiya.
+
     e.preventDefault();
-    console.log(title);
+    console.log(title,Detail);
     settitle('')
+    setDetail('')
   };
   const [title, settitle] = useState('')
   // Used for the input value taken as a heading
   const [Detail, setDetail] = useState('')
+  // used for taking detail from the user
+  const [Task, setTask] = useState([])
   return (
     <div className="flex justify-betweenm px-20 items-center h-full bg-black ">
       
@@ -34,8 +47,12 @@ const App = () => {
             className="bg-gray-700 h-35 outline-none py-2 px-10 text-xl text-white  border-2 rounded"
             type="text"
             placeholder="Enter Details"
+            value={Detail}
+            onChange={(e)=>{
+              setDetail(e.target.value)
+            }}
           />
-          <button className="p-5 text-black bg-white border-2 rounded text-2xl font-bold cursor-pointer">
+          <button className="p-5 text-black bg-white border-2 rounded text-2xl font-bold active:scale-105 cursor-pointer">
             Add Notes
           </button>
         </form>
