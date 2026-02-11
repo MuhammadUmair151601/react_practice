@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const App = () => {
   const submithandler = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:");
+    console.log(title);
+    settitle('')
   };
+  const [title, settitle] = useState('')
+  // Used for the input value taken as a heading
+  const [Detail, setDetail] = useState('')
   return (
     <div className="flex justify-betweenm px-20 items-center h-full bg-black ">
       
@@ -21,6 +25,10 @@ const App = () => {
             className="bg-gray-700 h-15 px-10 outline-none text-xl text-white border-2 rounded"
             type="text"
             placeholder="Enter notes heading"
+            value={title}
+            onChange={(e)=>{
+              settitle(e.target.value)
+            }}
           />
           <textarea
             className="bg-gray-700 h-35 outline-none py-2 px-10 text-xl text-white  border-2 rounded"
