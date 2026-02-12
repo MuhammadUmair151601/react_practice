@@ -16,6 +16,11 @@ const App = () => {
     settitle("");
     setDetail("");
   };
+  const deleted = (idx)=>{
+    const copytask = [...Task]
+    copytask.splice(idx,1)
+    setTask(copytask);
+  }
   const [title, settitle] = useState("");
   // Used for the input value taken as a heading
   const [Detail, setDetail] = useState("");
@@ -62,7 +67,9 @@ const App = () => {
                   key={idx}
                   className=" relative h-50 w-50 p-5 text-black[] bg-[url('https://static.vecteezy.com/system/resources/thumbnails/044/249/275/small/blank-and-white-notebook-with-spiral-without-background-template-for-mockup-png.png')] bg-cover bg-white mt-10 rounded-[5px] ml-10"
                 >
-                  <button className="absolute top-2 right-1 font-bold bg-red-500 p-2 rounded-4xl text-xs cursor-pointer active:scale-90"><i class="ri-close-large-line">X</i></button>
+                  <button onClick={()=>{
+                      deleted(idx)
+                  }} className="absolute top-2 right-1 font-bold bg-red-500 p-2 rounded-4xl text-xs cursor-pointer active:scale-90"><i class="ri-close-large-line">X</i></button>
                   <h1 className="font-bold text-xl mt-5">{elem.title}</h1>
                   <p className="mt-3 flex flex-wrap">{elem.Detail}</p>
                 </div>
