@@ -2,31 +2,28 @@ import React, { useState } from "react";
 
 const App = () => {
   const submithandler = (e) => {
-
-    const copytask = [...Task]
+    const copytask = [...Task];
     // saare task ko copy kiya taking from task.
-    copytask.push({title,Detail})
+    copytask.push({ title, Detail });
     // phir sare task ko push kiya copytask ma
     // console.log(copytask)
-    setTask(copytask)
-    console.log(copytask)
+    setTask(copytask);
+    console.log(copytask);
     // copy task ko console ma print kiya.
 
     e.preventDefault();
-    console.log(title,Detail);
-    settitle('')
-    setDetail('')
+    console.log(title, Detail);
+    settitle("");
+    setDetail("");
   };
-  const [title, settitle] = useState('')
+  const [title, settitle] = useState("");
   // Used for the input value taken as a heading
-  const [Detail, setDetail] = useState('')
+  const [Detail, setDetail] = useState("");
   // used for taking detail from the user
-  const [Task, setTask] = useState([])
+  const [Task, setTask] = useState([]);
   return (
-    <div className="flex justify-betweenm px-20 items-center h-full bg-black ">
-      
+    <div className="flex justify-betweenm px-20 items-center h-full bg-zinc-800 ">
       <div className="min-h-screen lg:flex lg:h-full">
-        
         <form
           onSubmit={(e) => {
             submithandler(e);
@@ -39,8 +36,8 @@ const App = () => {
             type="text"
             placeholder="Enter notes heading"
             value={title}
-            onChange={(e)=>{
-              settitle(e.target.value)
+            onChange={(e) => {
+              settitle(e.target.value);
             }}
           />
           <textarea
@@ -48,8 +45,8 @@ const App = () => {
             type="text"
             placeholder="Enter Details"
             value={Detail}
-            onChange={(e)=>{
-              setDetail(e.target.value)
+            onChange={(e) => {
+              setDetail(e.target.value);
             }}
           />
           <button className="p-5 text-black bg-white border-2 rounded text-2xl font-bold active:scale-105 cursor-pointer">
@@ -58,14 +55,19 @@ const App = () => {
         </form>
         <div className="lg:w-1/2 p-10 flex flex-col">
           <h1 className="text-3xl font-bold text-white ml-10">My Notes</h1>
-            <div className="flex  mt-5 gap-5 flex-wrap h-full lg:border-l-2 lg:border-white overflow-y-auto"> 
-              {Task.map((elem, idx)=>{
-            return <div key={idx} className=" relative h-50 w-50 p-5 text-black[] bg-[url('https://youmarkable.com/cdn/shop/products/ukD2uAVqku_2048x.jpg?v=1610111989')] bg-cover bg-white mt-10 rounded-[5px] ml-10">
-              <h1 className="absolute top-5 right-5 font-bold bg-red-500 p-2 rounded-2xl text-xl"><i class="ri-close-large-line">X</i></h1>
-              <h1 className="font-bold text-xl mt-5">{elem.title}</h1>
-              <p className="mt-3 flex flex-wrap">{elem.Detail}</p>
-              </div>
-           })}
+          <div className="flex   mt-5 gap-1 bg-zinc-800 w-125 flex-wrap  h-full lg:border-l-2 lg:border-white overflow-y-auto">
+            {Task.map((elem, idx) => {
+              return (
+                <div
+                  key={idx}
+                  className=" relative h-50 w-50 p-5 text-black[] bg-[url('https://static.vecteezy.com/system/resources/thumbnails/044/249/275/small/blank-and-white-notebook-with-spiral-without-background-template-for-mockup-png.png')] bg-cover bg-white mt-10 rounded-[5px] ml-10"
+                >
+                  <button className="absolute top-2 right-1 font-bold bg-red-500 p-2 rounded-4xl text-xs cursor-pointer active:scale-90"><i class="ri-close-large-line">X</i></button>
+                  <h1 className="font-bold text-xl mt-5">{elem.title}</h1>
+                  <p className="mt-3 flex flex-wrap">{elem.Detail}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
