@@ -1,5 +1,5 @@
 import React from 'react'
-
+import axios from 'axios'
 
 const App = () => {
    
@@ -21,6 +21,12 @@ const App = () => {
 //   const data = await response.json();
 //   console.log(data)
 // }
+
+// now calling apis using axios:
+const getdata = async ()=>{
+  const response = await axios.get('https://jsonplaceholder.typicode.com/todos')
+  console.log(response.data)
+}
 
 
   return (
