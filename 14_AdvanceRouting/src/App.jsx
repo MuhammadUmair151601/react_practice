@@ -7,7 +7,7 @@ import { Route, Routes } from 'react-router-dom'
 import Notfound from './pages/Notfound'
 import Men from './pages/Men'
 import Women from './pages/Women'
-
+import Course from './pages/Course'
 const App = () => {
   return (
     <div>
@@ -19,6 +19,7 @@ const App = () => {
         <Route path='*' element = {<Notfound/>}></Route>
         <Route path='/Product/men' element = {<Men/>}></Route>
         <Route path='/Product/women' element = {<Women/>}></Route>
+        <Route path='/course/:CourseId' element={<Course/>}></Route>
       </Routes>
     </div>
   )
